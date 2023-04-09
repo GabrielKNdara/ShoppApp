@@ -34,23 +34,21 @@ class CartScreen extends StatelessWidget {
                       '\$${cart.totalAmount.toStringAsFixed(2)}',
                       style: TextStyle(
                         color: Theme.of(context).primaryTextTheme.titleLarge?.color,
-                        // color: Theme.of(context).primaryTextTheme.title.color,
                       ),
                     ),
                     backgroundColor: Theme.of(context).primaryColor,
                   ),
                   ElevatedButton(
-                      child: Text('ORDER NOW'),
-                      onPressed: (){
-                        Provider.of<Orders>(context, listen: false).addOrder(
-                                  cart.items.values.toList(),
-                                  cart.totalAmount,
-                                );
-                                cart.clear();
-                      },
-
-                    // textColor: Theme.of(context).primaryColor,
-                  )
+                    child: Text('ORDER NOW'),
+                      onPressed: () {
+                                      Provider.of<Orders>(context, listen: false).addOrder(
+                                        cart.items.values.toList(),
+                                        cart.totalAmount,
+                                      );
+                                      cart.clear();
+                                    },
+//                                    textColor: Theme.of(context).primaryColor,,
+                      ),
                   // FlatButton(
                   //   child: Text('ORDER NOW'),
                   //   onPressed: () {
